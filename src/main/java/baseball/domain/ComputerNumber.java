@@ -10,8 +10,13 @@ public class ComputerNumber {
     private static int START_NUM = 1;
     private static int END_NUM = 9;
     private static int NUM_LENGTH = 3;
+    private final List<Integer> computerNumber;
 
-    private static List<Integer> createNumber(){
+    public ComputerNumber(){
+        this.computerNumber = createNumber();
+    }
+
+    private List<Integer> createNumber(){
         List<Integer> computerNum = createRandom();
         if(!isDuplicate(computerNum)){
             return createRandom();
@@ -21,13 +26,13 @@ public class ComputerNumber {
 
 
     //3자리 무작위 숫자 생성하는 메서드
-    private static List<Integer> createRandom(){
+    private  List<Integer> createRandom(){
         return Arrays.stream(new List[NUM_LENGTH]).map(num->Randoms.pickNumberInRange(START_NUM,END_NUM)).collect(
             Collectors.toList());
     }
 
     //3자리 숫자 중 겹치는 숫자가 있다면 false, 모두 겹치지 않는다면 true
-    private static boolean isDuplicate(List<Integer> createRandom){
+    private boolean isDuplicate(List<Integer> createRandom){
         return createRandom.stream().distinct().count() == NUM_LENGTH;
     }
 }
