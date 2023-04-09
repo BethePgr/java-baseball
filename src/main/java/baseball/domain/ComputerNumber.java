@@ -35,4 +35,8 @@ public class ComputerNumber {
     private boolean isDuplicate(List<Integer> createRandom){
         return createRandom.stream().distinct().count() == NUM_LENGTH;
     }
+
+    public List<Integer> getComputerNumber(){
+        return computerNumber;
+    }
 }
