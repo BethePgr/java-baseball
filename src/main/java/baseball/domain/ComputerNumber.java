@@ -19,7 +19,7 @@ public class ComputerNumber {
     private List<Integer> createNumber(){
         List<Integer> computerNum = createRandom();
         if(!isDuplicate(computerNum)){
-            return createRandom();
+            return createNumber();
         }
         return computerNum;
     }
