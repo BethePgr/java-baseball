@@ -11,11 +11,11 @@ public class BaseBall {
         this.computerNum = new ComputerNumber().getComputerNumber();
     }
 
-    private void inputUserNum(String input){
+    public void inputUserNum(String input){
         this.userNum = new UserNumber(input).getUserNumber();
     }
 
-    private void calculateGameResult(List<Integer> computerNum, List<Integer> userNum){
+    public void calculateGameResult(){
         this.gameResult = new GameResult(computerNum,userNum);
     }
 
