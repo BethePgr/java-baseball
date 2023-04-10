@@ -12,25 +12,25 @@ public class BaseBallController {
 
     private BaseBallService baseBallService;
 
-    public BaseBallController(){
+    public BaseBallController() {
         OutputView.printStartMessage();
     }
 
-    public void run(){
+    public void run() {
         boolean flag = false;
-        do{
+        do {
             this.baseBallService = new BaseBallService();
             runOneCycle();
             OutputView.printClearMessage();
             flag = baseBallService.wantRestart(InputView.inputRestartNumber());
-        }while(flag);
+        } while (flag);
 
     }
 
-    private void runOneCycle(){
+    private void runOneCycle() {
         int strikeCount = 0;
         baseBallService.initBaseBallGame();
-        while(strikeCount != 3){
+        while (strikeCount != 3) {
             GameResult gameResult = baseBallService.countBallStrike(InputView.inputUserNumber());
             strikeCount = gameResult.strikeCount;
             new OutputView(gameResult).printResult();

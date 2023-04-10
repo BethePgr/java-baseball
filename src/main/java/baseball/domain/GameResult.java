@@ -9,7 +9,7 @@ public class GameResult {
     public final int ballCount;
     public final int strikeCount;
 
-    public GameResult(List<Integer> computerNums, List<Integer> userNums){
+    public GameResult(List<Integer> computerNums, List<Integer> userNums) {
         this.ballCount = countBall(computerNums, userNums);
         this.strikeCount = countStrike(computerNums, userNums);
     }

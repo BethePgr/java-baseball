@@ -12,13 +12,13 @@ public class ComputerNumber {
     private static int NUM_LENGTH = 3;
     private final List<Integer> computerNumber;
 
-    public ComputerNumber(){
+    public ComputerNumber() {
         this.computerNumber = createNumber();
     }
 
-    private List<Integer> createNumber(){
+    private List<Integer> createNumber() {
         List<Integer> computerNum = createRandom();
-        if(!isDuplicate(computerNum)){
+        if (!isDuplicate(computerNum)) {
             return createNumber();
         }
         return computerNum;
@@ -26,17 +26,18 @@ public class ComputerNumber {
 
 
     //3자리 무작위 숫자 생성하는 메서드
-    private  List<Integer> createRandom(){
-        return Arrays.stream(new List[NUM_LENGTH]).map(num->Randoms.pickNumberInRange(START_NUM,END_NUM)).collect(
-            Collectors.toList());
+    private List<Integer> createRandom() {
+        return Arrays.stream(new List[NUM_LENGTH])
+            .map(num -> Randoms.pickNumberInRange(START_NUM, END_NUM)).collect(
+                Collectors.toList());
     }
 
     //3자리 숫자 중 겹치는 숫자가 있다면 false, 모두 겹치지 않는다면 true
-    private boolean isDuplicate(List<Integer> createRandom){
+    private boolean isDuplicate(List<Integer> createRandom) {
         return createRandom.stream().distinct().count() == NUM_LENGTH;
     }
 
-    public List<Integer> getComputerNumber(){
+    public List<Integer> getComputerNumber() {
         return computerNumber;
     }
 }
