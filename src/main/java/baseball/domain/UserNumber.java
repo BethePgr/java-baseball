@@ -23,6 +23,10 @@ public class UserNumber {
         return userNums;
     }
 
+    private boolean isLengthSame(List<Integer> userNums){
+        return userNums.size() == NUM_LENGTH;
+    }
+
 
     private boolean isDuplicate(List<Integer> userNums){
         return userNums.stream().distinct().count() == NUM_LENGTH;
@@ -33,7 +37,7 @@ public class UserNumber {
     }
 
     private boolean checkAll(List<Integer> userNums){
-        return isDuplicate(userNums) && checkValidNumber(userNums);
+        return isDuplicate(userNums) && checkValidNumber(userNums) && isLengthSame(userNums);
     }
 
     private List<Integer> convertStringToInt(String str){
