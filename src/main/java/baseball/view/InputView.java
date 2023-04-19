@@ -6,10 +6,10 @@ import java.util.Arrays;
 
 public class InputView {
 
-    private static final String INPUT_NUMBER_MESSAGE = "숫자를 입력해주세요 :";
+    private static final String INPUT_NUMBER_MESSAGE = "숫자를 입력해주세요 : ";
 
     public String startMessage(){
-        System.out.println(INPUT_NUMBER_MESSAGE);
+        System.out.print(INPUT_NUMBER_MESSAGE);
         return Console.readLine();
     }
 
