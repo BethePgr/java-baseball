@@ -25,11 +25,11 @@ public class BaseBallResult {
             .filter(num -> computerNums.get(num) == userNums.get(num)).count();
     }
 
-    public int getBallCount(){
+    public int getBallCount() {
         return ballCount;
     }
 
-    public int getStrikeCount(){
+    public int getStrikeCount() {
         return strikeCount;
     }
 }

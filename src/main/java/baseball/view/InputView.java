@@ -9,23 +9,19 @@ public class InputView {
     private static final String INPUT_NUMBER_MESSAGE = "숫자를 입력해주세요 : ";
     private static final String INPUT_RESTART_MESSAGE = "게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.";
     private final InputValidate inputValidate = new InputValidate();
-    public String startMessage(){
+
+    public String startMessage() {
         System.out.print(INPUT_NUMBER_MESSAGE);
         String input = Console.readLine();
-
-            inputValidate.validateInputNumber(input);
-            return input;
-
-
+        inputValidate.validateInputNumber(input);
+        return input;
     }
 
-    public String reStartMessage(){
+    public String reStartMessage() {
         System.out.println(INPUT_RESTART_MESSAGE);
         String input = Console.readLine();
-
-            inputValidate.validateInputRestart(input);
-            return input;
-
+        inputValidate.validateInputRestart(input);
+        return input;
     }
 
 }
