@@ -1,8 +1,16 @@
 package baseball.view;
 
+import baseball.validate.InputValidate;
+import camp.nextstep.edu.missionutils.Console;
+import java.util.Arrays;
+
 public class InputView {
 
-    public void startMessage(){
-        System.out.println("숫자 야구 게임을 시작합니다.");
+    private static final String INPUT_NUMBER_MESSAGE = "숫자를 입력해주세요 :";
+
+    public String startMessage(){
+        System.out.println(INPUT_NUMBER_MESSAGE);
+        return Console.readLine();
     }
+
 }
