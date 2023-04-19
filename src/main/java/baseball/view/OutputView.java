@@ -19,7 +19,7 @@ public class OutputView {
 
     private void printBall(){
         if(baseBallResult.getBallCount() != 0 && baseBallResult.getStrikeCount() == 0){
-            System.out.print(baseBallResult.getBallCount()+"볼");
+            System.out.println(baseBallResult.getBallCount()+"볼");
         }
     }
 
