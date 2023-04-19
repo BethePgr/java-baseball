@@ -1,5 +1,6 @@
 package baseball.controller;
 
+import baseball.constant.BaseBallConstant;
 import baseball.domain.BaseBallResult;
 import baseball.service.BaseBallService;
 import baseball.view.InputView;
@@ -24,7 +25,7 @@ public class BaseBallController {
         int strikeCount = 0;
         do {
             strikeCount = runOneTime();
-        } while (strikeCount != 3);
+        } while (strikeCount != BaseBallConstant.COMPUTER_NUMBER_SIZE);
         OutputView.printEndGame();
     }
 

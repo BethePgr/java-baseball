@@ -1,5 +1,6 @@
 package baseball.domain;
 
+import baseball.constant.BaseBallConstant;
 import baseball.validate.ComputerNumValidate;
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ public class ComputerNumber {
 
     private List<Integer> CreateComputerNum() {
         List<Integer> list = new ArrayList<>();
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < BaseBallConstant.COMPUTER_NUMBER_SIZE; i++) {
             list.add(Randoms.pickNumberInRange(1, 9));
         }
         return list;
