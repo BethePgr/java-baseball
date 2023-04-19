@@ -10,6 +10,10 @@ public class ComputerNumber {
     private ComputerNumValidate computerNumValidate = new ComputerNumValidate();
     private List<Integer> computerNum;
 
+    public ComputerNumber(){
+        CreateDistinctComputerNum();
+    }
+
     private List<Integer> CreateComputerNum(){
         List<Integer> list = new ArrayList<>();
         for(int i = 0;i<3;i++){
