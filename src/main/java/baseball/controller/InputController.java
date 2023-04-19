@@ -19,4 +19,15 @@ public class InputController {
         }
     }
 
+    public String inputRestart(){
+        try{
+            String input = inputView.reStartMessage();
+            inputValidate.validateInputRestart(input);
+            return input;
+        }catch(IllegalArgumentException e){
+            System.out.println(e.getMessage());
+            return "";
+        }
+    }
+
 }
