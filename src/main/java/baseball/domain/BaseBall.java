@@ -15,7 +15,7 @@ public class BaseBall {
 
     public void inputToList(String input) {
         userNumList = new ArrayList<>();
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < computerNumList.size(); i++) {
             userNumList.add(input.charAt(i) - '0');
         }
     }
