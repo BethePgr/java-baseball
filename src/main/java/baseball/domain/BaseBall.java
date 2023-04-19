@@ -13,7 +13,7 @@ public class BaseBall {
         computerNumList = new ComputerNumber().getComputerNum();
     }
 
-    private void inputToList(String input) {
+    public void inputToList(String input) {
         userNumList = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
             userNumList.add(input.charAt(i) - '0');
