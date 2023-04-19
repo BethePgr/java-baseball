@@ -1,15 +1,15 @@
 package baseball.domain;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class GameResult {
+public class BaseBallResult {
 
-    public final int ballCount;
-    public final int strikeCount;
+    private final int ballCount;
+    private final int strikeCount;
 
-    public GameResult(List<Integer> computerNums, List<Integer> userNums) {
+    public BaseBallResult(List<Integer> computerNums, List<Integer> userNums) {
         this.ballCount = countBall(computerNums, userNums);
         this.strikeCount = countStrike(computerNums, userNums);
     }
@@ -23,5 +23,13 @@ public class GameResult {
     private int countStrike(List<Integer> computerNums, List<Integer> userNums) {
         return (int) Stream.iterate(0, i -> i + 1).limit(computerNums.size())
             .filter(num -> computerNums.get(num) == userNums.get(num)).count();
+    }
+
+    public int getBallCount() {
+        return ballCount;
+    }
+
+    public int getStrikeCount() {
+        return strikeCount;
     }
 }

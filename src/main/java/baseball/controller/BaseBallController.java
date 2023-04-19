@@ -1,40 +1,37 @@
 package baseball.controller;
 
-import baseball.domain.ComputerNumber;
-import baseball.domain.GameResult;
-import baseball.domain.UserNumber;
+import baseball.domain.BaseBallResult;
 import baseball.service.BaseBallService;
 import baseball.view.InputView;
 import baseball.view.OutputView;
-import java.util.List;
 
 public class BaseBallController {
 
+    private InputView inputView = new InputView();
     private BaseBallService baseBallService;
 
-    public BaseBallController() {
-        OutputView.printStartMessage();
-    }
-
     public void run() {
-        boolean flag = false;
+        String input = "";
         do {
-            this.baseBallService = new BaseBallService();
             runOneCycle();
-            OutputView.printClearMessage();
-            flag = baseBallService.wantRestart(InputView.inputRestartNumber());
-        } while (flag);
-
+            input = inputView.reStartMessage();
+        } while (input.equals("1"));
     }
 
-    private void runOneCycle() {
+    public void runOneCycle() {
+        baseBallService = new BaseBallService();
         int strikeCount = 0;
-        baseBallService.initBaseBallGame();
-        while (strikeCount != 3) {
-            GameResult gameResult = baseBallService.countBallStrike(InputView.inputUserNumber());
-            strikeCount = gameResult.strikeCount;
-            new OutputView(gameResult).printResult();
-        }
+        do {
+            strikeCount = runOneTime();
+        } while (strikeCount != 3);
+        OutputView.printEndGame();
+    }
+
+    public int runOneTime() {
+        String input = inputView.startMessage();
+        BaseBallResult result = baseBallService.getResult(input);
+        new OutputView(result).printResult();
+        return result.getStrikeCount();
     }
 
 }
