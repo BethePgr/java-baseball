@@ -24,4 +24,12 @@ public class BaseBallResult {
         return (int) Stream.iterate(0, i -> i + 1).limit(computerNums.size())
             .filter(num -> computerNums.get(num) == userNums.get(num)).count();
     }
+
+    public int getBallCount(){
+        return ballCount;
+    }
+
+    public int getStrikeCount(){
+        return strikeCount;
+    }
 }
