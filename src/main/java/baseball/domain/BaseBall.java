@@ -21,6 +21,7 @@ public class BaseBall {
     }
 
     public BaseBallResult getBaseBallResult(){
+        baseBallResult = new BaseBallResult(computerNumList,userNumList);
         return baseBallResult;
     }
 }
