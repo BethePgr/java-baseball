@@ -12,25 +12,20 @@ public class InputView {
     public String startMessage(){
         System.out.print(INPUT_NUMBER_MESSAGE);
         String input = Console.readLine();
-        try{
+
             inputValidate.validateInputNumber(input);
             return input;
-        }catch (IllegalArgumentException e){
-            System.out.println(e.getMessage());
-        }
-        return null;
+
+
     }
 
     public String reStartMessage(){
         System.out.println(INPUT_RESTART_MESSAGE);
         String input = Console.readLine();
-        try{
+
             inputValidate.validateInputRestart(input);
             return input;
-        }catch(IllegalArgumentException e) {
-            System.out.println(e.getMessage());
-            return null;
-        }
+
     }
 
 }
