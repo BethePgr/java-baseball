@@ -2,40 +2,36 @@ package baseball.controller;
 
 import baseball.domain.BaseBallResult;
 import baseball.service.BaseBallService;
+import baseball.view.InputView;
 import baseball.view.OutputView;
 
 public class BaseBallController {
 
-    private InputController inputController = new InputController();
+    private InputView inputView = new InputView();
     private BaseBallService baseBallService;
 
-    public void run(){
+    public void run() {
         String input = "";
         do {
             runOneCycle();
-            input = inputController.inputRestart();
-        }while(input.equals("1"));
-
+            input = inputView.reStartMessage();
+        } while (input.equals("1"));
     }
 
-    public void runOneCycle(){
+    public void runOneCycle() {
         baseBallService = new BaseBallService();
         int strikeCount = 0;
-        do{
+        do {
             strikeCount = runOneTime();
-        }while(strikeCount != 3);
+        } while (strikeCount != 3);
         OutputView.printEndGame();
     }
 
-    public int runOneTime(){
-        String input = inputController.inputNum();
+    public int runOneTime() {
+        String input = inputView.startMessage();
         BaseBallResult result = baseBallService.getResult(input);
         new OutputView(result).printResult();
         return result.getStrikeCount();
     }
 
-    public static void main(String[] args) {
-        BaseBallController bs = new BaseBallController();
-        bs.run();
-    }
 }
