@@ -19,4 +19,8 @@ public class BaseBallService {
         baseBall.inputToList(input);
         return baseBall.getBaseBallResult();
     }
+
+    public boolean checkRestart(String input){
+        return input.equals("1") || input.equals("2");
+    }
 }

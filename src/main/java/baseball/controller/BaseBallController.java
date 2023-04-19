@@ -7,9 +7,19 @@ import baseball.view.OutputView;
 public class BaseBallController {
 
     private InputController inputController = new InputController();
-    private BaseBallService baseBallService = new BaseBallService();
+    private BaseBallService baseBallService;
 
     public void run(){
+        String input = "";
+        do {
+            runOneCycle();
+            input = inputController.inputRestart();
+        }while(input.equals("1"));
+
+    }
+
+    public void runOneCycle(){
+        baseBallService = new BaseBallService();
         int strikeCount = 0;
         do{
             strikeCount = runOneTime();
